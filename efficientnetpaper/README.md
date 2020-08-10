@@ -7,7 +7,7 @@ Model Scaling
 --------------
 > Model Scaling 기법들   
 
-<img src="/paper_review/efficientnetpaper/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/efficientnetpaper/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 Convolution Network의 크기(scale)을 키우는 방법은 3가지가 있다. layer의 갯수를 늘리는 depth scaling,
 width(필터 수)를 늘리는 width scaling, input image의 해상도를 높이는 resolution scaling이 자주 이용된다.
@@ -22,14 +22,14 @@ Compound Scaling
 
 > Single Demension Model Scaling 실험 결과   
 
-<img src="/paper_review/efficientnetpaper/image/2.JPG" width="80%" height="80%" title="img1" alt="img2"></img>   
+<img src="/efficientnetpaper/image/2.JPG" width="80%" height="80%" title="img1" alt="img2"></img>   
 
 그래프를 비교해 보면 width Scaling과 Depth Scaling은 비교적 이른 시점에 Accuracy가 포화 되는데 비해
 Resolution Scaling은 키울소록 Accuracy가 잘오르는 것을 확인 할 수 있다.
 
 > 3가지 Scaling vector의 따른 비교 실험 결과   
 
-<img src="/paper_review/efficientnetpaper/image/3.JPG" width="80%" height="80%" title="img1" alt="img3"></img>   
+<img src="/efficientnetpaper/image/3.JPG" width="80%" height="80%" title="img1" alt="img3"></img>   
 
 초록색 선과 노란색 선을 비교결과 depth 를 키우는것 보다 resolution을 키우는 것이 Accuracy 향상에 효과적임을 보인다.
 또한 빨간색 선과 비교해보면 1 가지 or 2가지 scaling factor을 키우는것 보단 3가지 scaling factor를 동시에 키우는 것이
@@ -43,12 +43,12 @@ Resolution Scaling은 키울소록 Accuracy가 잘오르는 것을 확인 할 �
 
 > EfficientNet-B0 Model Architecture   
    
-<img src="/paper_review/efficientnetpaper/image/4.JPG" width="80%" height="80%" title="img1" alt="img4"></img>    
+<img src="/efficientnetpaper/image/4.JPG" width="80%" height="80%" title="img1" alt="img4"></img>    
 주요블록층은 Mobilenet v2, mnasnet, Squeeze-and-Excitation의 seblock 등이 사용 되었다.
     
 > Compund Scaling
    
-<img src="/paper_review/efficientnetpaper/image/5.JPG" width="80%" height="80%" title="img1" alt="img5"></img>    
+<img src="/efficientnetpaper/image/5.JPG" width="80%" height="80%" title="img1" alt="img5"></img>    
 
 실험내용
 -------
@@ -61,11 +61,11 @@ Resolution Scaling은 키울소록 Accuracy가 잘오르는 것을 확인 할 �
 
 > ImageNet에 대한 실험결과   
    
-<img src="/paper_review/efficientnetpaper/image/6.JPG" width="80%" height="80%" title="img6" alt="img6"></img>   
+<img src="/efficientnetpaper/image/6.JPG" width="80%" height="80%" title="img6" alt="img6"></img>   
 
 > Activation Map   
 
-<img src="/paper_review/efficientnetpaper/image/7.JPG" width="80%" height="80%" title="img7" alt="img7"></img>   
+<img src="/efficientnetpaper/image/7.JPG" width="80%" height="80%" title="img7" alt="img7"></img>   
 
 위 결과는 이미지 분류 시 class activation map 의 결과인데, 3개의 scaling factor 를 
 각각 고려할 때 보다 동시에 고려했을 때(compound scaling)가 더 정교한 CAM를 얻을 수 있음을 확인 할 수 있다. 
