@@ -28,7 +28,7 @@ Semantic Segmentation을 해결하기 위한 방법론은 여러가지가 존재
  
 Atrous Convolution
 ------------------
-<img src="/paper_review/deeplab/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/deeplab/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 Atrous에서 trous는 구멍(hole)을 의미함으로써, Atrous Convolution은 기존 Convolution과 다르게 필터 내부에 빈 공간을 둔 채 작동하게 된다.
 위 그림에서 얼마나 빈 공간을 둘지 결정하는 파라미터값 r(rate의 약자)이 1인 경우, 기존 Convolution과 동일하고 r이 커질수록 빈 공간이 넓어지게 되는 것이다.
@@ -39,7 +39,7 @@ Atrous에서 trous는 구멍(hole)을 의미함으로써, Atrous Convolution은 
 
 Atrous Spatial Pyramid Pooling(ASPP)
 ------------------------------------
-<img src="/paper_review/deeplab/image/2.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/deeplab/image/2.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 Semantic segmentaion의 성능을 높이기 위한 방법 중 하나로, spatial pyramid pooling 기법이 자주 활용되고 있는 추세이다.
  DeepLab V2에서 feature map으로부터 rate가 다른 Atrous Convolution을 병렬로 적용한 뒤,
@@ -50,7 +50,7 @@ Semantic segmentaion의 성능을 높이기 위한 방법 중 하나로, spatial
  
  Depthwise separable convolution
 -------------------------------
-<img src="/paper_review/deeplab/image/5.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/deeplab/image/5.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 Convolution 연산에서 Channel 축을 필터가 한 번에 연산하는 대신에 위 그림과 같이 입력 영상의 Channel 축을 모두 분리시킨 뒤,
 Channel 축 길이를 항상 1로 가지는 여러 개의 Convolution 필터로 대체시킨 연산을 Depthwise Convolution이라고 한다.
@@ -59,7 +59,7 @@ Channel 축 길이를 항상 1로 가지는 여러 개의 Convolution 필터로 
 
 Encoder-Decoder
 ----------------
-<img src="/paper_review/deeplab/image/3.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/deeplab/image/3.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
  마지막으로 DeepLab V3+는 위에서 설명한 모듈을 Encoder-Decoder로 구조화시켰다.
  U-Net과 유사하게 intermediate connection을 가지는 encoder-decoder 구조를 적용하여 보다 정교한 object boundary를 예측 할 수 있게 하였다.
@@ -67,7 +67,7 @@ Encoder-Decoder
  
 Modified Aligned Xception
 --------------------------
-<img src="/paper_review/deeplab/image/6.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/deeplab/image/6.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 eepLab V3+에서는 Xception을 backbone으로 사용하지만 MSRA의 Aligned Xception과 다른 3가지 변화를 주었다.   
 빠른 연산과 메모리 효율을 위해 Entry Flow Structure 를 수정하지 않았으며 Atrous Separable Convolution을 적용하기 위해 모든 Pooling Opearation을 Depthwise Separable Convolution으로 대체하였다.
 또한 각각의 3*3 Depthwise Convolution 이후에 추가적으로 Bath-norm과 ReLU 활성화 함수를 추가해주었다.
@@ -77,11 +77,11 @@ eepLab V3+에서는 Xception을 backbone으로 사용하지만 MSRA의 Aligned X
  
  Model Archtecture
  -----------------
- <img src="/paper_review/deeplab/image/4.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
+ <img src="/deeplab/image/4.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
  
  실험내용
  -------
-  <img src="/paper_review/deeplab/image/7.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
+  <img src="/deeplab/image/7.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
    다양한 파라미터와 세팅에 대해서 실험을 진행하였는데, 우선 ResNet-101 구조를 Encoder로 사용하였을 때, 성능을 측정한 것이다.
    Decoder 부분을 bilinear upsampling 대신, 단순화된 U-Net 구조로 변경할 경우 기존 대비 mIOU 1.64% 향상이 있음을 확인 할 수 있다.
 
