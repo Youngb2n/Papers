@@ -6,7 +6,7 @@ Fully Convolutional Model
 -------------------------
 > Transforming fully connected layers into convolution layers   
 
-<img src="/paper_review/FCN/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FCN/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 FCN이 주목한 부분은 Classfication에서 성능을 검증받은 좋은 네트워크(AlexNet, VGGNet, GoogleNet) 등을 이용하는 것이다.
 이들 대부분의 Classification을 위한 네트워크 뒷단에 분류를 위한 fully connected layer가 오는데,
@@ -19,11 +19,11 @@ UpSampling
 ----------
 > Upsampling 과정   
    
-<img src="/paper_review/FCN/image/2.JPG" width="60%" height="60%" title="img1" alt="img1"></img>     
+<img src="/FCN/image/2.JPG" width="60%" height="60%" title="img1" alt="img1"></img>     
 
 >DeConvolution 방식    
     
-<img src="/paper_review/FCN/image/3.JPG" width="60%" height="60%" title="img1" alt="img1"></img>    
+<img src="/FCN/image/3.JPG" width="60%" height="60%" title="img1" alt="img1"></img>    
 
 여러 단계의 Convolution + pooling 단계를 거치게 되면, feaeture-map 의 크기 줄어 들게 된다.
 픽셀 단위로 예측을 하기 위하여 줄어든 feature-map을 다시 키우는 과정을 거쳐야 한다.
@@ -40,7 +40,7 @@ feature map의 크기가 너무 작기 때문에 예측된 dense map의 정보�
 
 > FCN-32 결과
 
-<img src="/paper_review/FCN/image/4.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FCN/image/4.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 
 
@@ -48,7 +48,7 @@ feature map의 크기가 너무 작기 때문에 예측된 dense map의 정보�
 Shallow & fine 층의 외관적(appearance) 정보를 결합한 Skip architecture를 정의한다. 
 
    
-<img src="/paper_review/FCN/image/6.JPG" width="80%" height="80%" title="img1" alt="img1"></img>
+<img src="/FCN/image/6.JPG" width="80%" height="80%" title="img1" alt="img1"></img>
 이러한 직관은 Visualizing and Understanding Convolutional Networks 연구를 통해서도 엿볼 수 있다. 
 시각화 모델을 통해 입력 이미지에 대해 얕은 층에서는 주로 직선 및 곡선, 색상 등의 낮은 수준의 특징에 활성화되고,
 깊은 층에서는 보다 복잡하고 포괄적인 개체 정보에 활성화된다는 것을 확인할 수 있다. 
@@ -57,7 +57,7 @@ FCNs 연구팀은 이러한 직관을 기반으로 앞에서 구한 Dense map에
 
 > FCN Architecture   
    
-<img src="/paper_review/FCN/image/5.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FCN/image/5.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 FCN에서는 1/32 크기에서의 feature 만 이용하는게 아니라, 1/16, 1/8에서의 feature 값도 같이 사용하는 방식을 취하였다.
 
@@ -67,15 +67,15 @@ FCN에서는 1/32 크기에서의 feature 만 이용하는게 아니라, 1/16, 1
 
 >FCN-16s
    
-<img src="/paper_review/FCN/image/7.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FCN/image/7.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 >FCN-8s
 
-<img src="/paper_review/FCN/image/8.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FCN/image/8.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 >FCN VGG result   
 
-<img src="/paper_review/FCN/image/9.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FCN/image/9.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 각 Pooling에 Prediction을 위해 추가된 Conv layer의 필터는 0으로,
 Trainable Backwards convolution은 Bilinear interpolation으로 초기화한 후 학습을 진행하였다.
