@@ -19,7 +19,7 @@ Wide vs Depth
 -------------
 > Block Archtecture 비교   
    
-<img src="/paper_review/wideresnet/image/1.JPG" width="60%" height="60%" title="img1" alt="img1"></img>   
+<img src="/wideresnet/image/1.JPG" width="60%" height="60%" title="img1" alt="img1"></img>   
 
 ResNet은 shorcut connection을 통해 많은 layer을 학습 할 수 있도록 하였다.
 하지만 망이 깊어지면 깊어질 수록 의미있는 정보(context)를 갖는 필터의 수의 비가 적어지는 문제가 발생하게 되었다.
@@ -29,7 +29,7 @@ ResNet은 shorcut connection을 통해 많은 layer을 학습 할 수 있도록 
 
 > ResNet B(3,3) Model Archtecture   
    
-<img src="/paper_review/wideresnet/image/2.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
+<img src="/wideresnet/image/2.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
 B(3,3)의 경우 구조가 위와 같이 정의된다. K 는 widen factor, N은 블록의 수(각 Residual Block의 수)다.
 이해를 돕기 위해 K가 2인 경우 아래와 같이 구현이 될 수 있습니다.
 
@@ -48,15 +48,15 @@ Dropout은 Coadaptive하고 overfitting을 막기 위해 많은 네트워크에 
 -------  
 > Width of residual blocks   
    
-<img src="/paper_review/wideresnet/image/3.JPG" width="40%" height="40%" title="img1" alt="img1"></img>   
+<img src="/wideresnet/image/3.JPG" width="40%" height="40%" title="img1" alt="img1"></img>   
 
 폭(width)와 깊이(depth), 파라미터수를 비교하면서 실험을 해본 결과 동일한 depth 상에서는 k(Convolution layer 내에서 feature 수의 배수.
 )가 클수록 우수하고 동일한 k 상에서는 depth가 클수록 우수하다. 하지만 비슷한 파라미터 수에서는 depth와 k의 중요도를 판정 지을 수 없었다.
 
 > 다른 모델들과의 비교   
    
-<img src="/paper_review/wideresnet/image/4.JPG" width="60%" height="60%" title="img1" alt="img1"></img>   
-<img src="/paper_review/wideresnet/image/5.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
+<img src="/wideresnet/image/4.JPG" width="60%" height="60%" title="img1" alt="img1"></img>   
+<img src="/wideresnet/image/5.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
 
 본 논문에서는 CIFAR10과 CIFAR100을 여러 모델을 통해 실험하였고, 
 위의 결과와 같이 WRN(depth 28, k 10)이 test error 4로 가장 높은 성능을 보였다.
@@ -65,8 +65,8 @@ Dropout은 Coadaptive하고 overfitting을 막기 위해 많은 네트워크에 
 
 > Dropout in residual blocks    
    
-<img src="/paper_review/wideresnet/image/6.JPG" width="60%" height="60%" title="img1" alt="img1"></img>   
-<img src="/paper_review/wideresnet/image/7.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
+<img src="/wideresnet/image/6.JPG" width="60%" height="60%" title="img1" alt="img1"></img>   
+<img src="/wideresnet/image/7.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
 
 Dropout 을 residual block 에 적용해 본 결과 성능의 향상을 확인할 수 있었다.
 cross-validation 을 이용해서 CIFAR 데이터에는 dropout 비율을 0.3 으로 정하였다.(SVHN은 0.4)
