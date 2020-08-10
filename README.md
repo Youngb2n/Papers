@@ -1,4 +1,4 @@
-# 논문정리
+# 논문 정리 및 리뷰 
 
 
 ### 1. [VGG(Very Deep Convolutional Networks for Large-Scale Image Recognition)](https://github.com/Youngb2n/Papers/blob/master/vggpaper/README.md)   
