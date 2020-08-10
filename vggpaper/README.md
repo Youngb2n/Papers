@@ -29,16 +29,16 @@ VGGNet의 특징은 작은 Convolution Filter(3x3, 1 strides)로 깊은 레이�
 ---------
 >실험 모델 사이의 layer 및 파라미터 수 비교   
    
-<img src="/paper_review/vggpaper/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
+<img src="/vggpaper/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
 >single test scale 모델간의 성능 비교   
    
-<img src="/paper_review/vggpaper/image/2.JPG" width="80%" height="80%" title="img1" alt="img1"></img>  
+<img src="/vggpaper/image/2.JPG" width="80%" height="80%" title="img1" alt="img1"></img>  
 > multi test scale 모델간의 성능 비교  
    
-<img src="/paper_review/vggpaper/image/3.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
+<img src="/vggpaper/image/3.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
 >D model 과 E model 사이의 single test scale 과 multi test scale 비교  
    
-<img src="/paper_review/vggpaper/image/4.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
+<img src="/vggpaper/image/4.JPG" width="80%" height="80%" title="img1" alt="img1"></img>   
 
 
 VGGNet은 224x224 크기의 color image를 input으로 하여 1개 이상의 convolutional layer 뒤에 max-pooling layer 가 오는 단순 구조로 되어 있으며 기존 CNN 구조와 마찬가지로 Fully-connected layer가 온다. sing test scale 모델 성능 비교 결과 A 모델과  A-LRN 모델 사이의 LRN layer의 유무에 따른 모델 성능을 비교한 결과 top-1 val.error와 top-5 val.error의 성능 향상이 없다고 판단하여  B 모델 ~ E 모델은 layer 깊이에 따른 모델 성능의 변화를 비교 하였다. 그 결과 망이 깊어질수록 성능 향상을 있음을 확인 하였고 single test scale을 사용한 model들과 multi-crop과 dense evaluation 을 섞어 사용한 multi test scale을 사용한 model들을 각각 성능을 비교하였다. multi test scale을 사용한 모델들이 조금 더 높은 성능을 보인다.   
