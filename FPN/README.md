@@ -4,7 +4,7 @@ Feature Pyramid Networks for Object Detection
 
 Feature Pyramid
 ----------------
-<img src="/paper_review/FPN/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FPN/image/1.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 Object Detection 분야에서 풀리지 않았던 고질적인 난제는 바로 작은 물체를 탐지해내기가 어렵다는 것입니다. 이를 위해서 이미지나 피쳐맵의 크기를 다양한 형태로 rescale하는 접근 방식이 있어왔습니다.    
 > (a)는 입력 이미지 자체를 여러 크기로 resize 한 뒤, 각각의 이미지에서 물체를 탐지하는 기법입니다.(MTCNN)   
@@ -17,7 +17,7 @@ Object Detection 분야에서 풀리지 않았던 고질적인 난제는 바로 
 
 Feature Fusion
 --------------
-<img src="/paper_review/FPN/image/2.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FPN/image/2.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 FPN이 어떻게 상위 Feature-map과 하위 feature-map을 합쳐주는 지를 살펴보겠습니다. FPN은 피쳐맵이 레이어를 통과하면서 이미지 크기가 2배씩 작아집니다.  그래서 상위 feature-map과 하위 feature-map을 합치기 위해서는 이미지 크기를 맞춰줘야 한다. nearest neighbor upsampling 이라는 기법을 적용하여 상위 feature-map의 이미지 크기를 2배 키웠습니다.
 
 
@@ -49,21 +49,21 @@ Top-down 과정에서 매 레이어마다 classifier / regressor 가 적용되�
 
 Feature Pyramid Networks for RPN
 --------------------------------
-<img src="/paper_review/FPN/image/3.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FPN/image/3.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 Feature Pyramid Network 기법을 기존 Object Detection Model에 적용하여 실제로 잘 작동하는 지를 확인해보고자 했습니다. 논문에서는 Faster R-CNN의 RPN과 Classifier에 적용하여 실험을 진행하였습니다.   
 Faster RCNN에서의 RPN은 먼저 pretrained 된 VGG를 통과한 피쳐맵을 전달받습니다. 해당 피쳐맵에 3x3 컨볼루션을 적용하여 Intermediate Layer라는 피쳐맵을 생성합니다. 이를 각각 1x1 컨볼루션을 양갈래로 적용하여 각 엥커 박스가 object인지 여부와 bounding box regression을 수행해줍니다. RPN에 FPN 기법을 적용하면 아래와 같은 구조를 취합니다.
 
-<img src="/paper_review/FPN/image/4.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FPN/image/4.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 Feature Pyramid Networks for Fast R-CNN
 ---------------------------------------
-<img src="/paper_review/FPN/image/5.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FPN/image/5.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 기존의 구조에서는 입력 이미지를 pretrained model을 통과시켜서 얻은 피쳐맵에 RoI를 사상시켰습니다. 하지만 앞서서 FPN을 통해서 우리는 P2, ..., P5에 이르는 다양한 크기의 피쳐맵을 생성하였습니다.
 > RoI의 크기에 따라서 사상시킬 피쳐맵을 결정하는 수식   
    
-<img src="/paper_review/FPN/image/6.jpg" width="40%" height="40%" title="img1" alt="img1"></img>    
+<img src="/FPN/image/6.jpg" width="40%" height="40%" title="img1" alt="img1"></img>    
 k 는 피쳐 맵의 번호입니다. 224란 크기는 pretrained model이 224x224 크기의 이미지를 학습한 것에서 따왔습니다. k0는 224x224 크기의 RoI가 들어왔을 때 몇 번째 피쳐맵에 사상시킬 것인지를 결정하는 수이며, 논문에서는 4로 설정되었습니다.
 > 
 
@@ -71,12 +71,12 @@ k 는 피쳐 맵의 번호입니다. 224란 크기는 pretrained model이 224x22
 ----------
 > Object detection results using Faster R-CNN   
    
-<img src="/paper_review/FPN/image/8.JPG" width="80%" height="80%" title="img1" alt="img1"></img>  
+<img src="/FPN/image/8.JPG" width="80%" height="80%" title="img1" alt="img1"></img>  
 여기서  lateral connection은 skip-connection과 동일한 말이다. 
 
 > 모델 비교   
    
-<img src="/paper_review/FPN/image/7.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
+<img src="/FPN/image/7.JPG" width="80%" height="80%" title="img1" alt="img1"></img>    
 
 Faster R-CNN모델을 BackBone으로 FPN의 lateral connection 과 Top-down 을 적용시킨 모델이 제일 좋은 성능을 보였다. 이외에도 RPN, Fast R-CNN,
 등을 BackBone으로 실험을 하였지만 동일한 결과가 나왔다.
