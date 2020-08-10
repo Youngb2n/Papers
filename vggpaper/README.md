@@ -48,8 +48,3 @@ VGGNet은 224x224 크기의 color image를 input으로 하여 1개 이상의 con
 
 VGG 연구팀의 실험 결과를 통해 네트워크의 깊이가 깊어질수록 이미지 분류 정확도가 높아지는 것을 확인할 수 있었다.  
 모델 구조에서 Fully Connected Layer가 3개이기 때문에 파라미터 수가 1억2천만개 정도 되므로 역전파 과정 시 Convolutional layer의 중간 결과를 저장하기 때문에 많은 메모리 공간을 차지한다는 단점이 있다.   
-   
-code 구현
------
-### VGG16 tensorflow2.0 code : <https://github.com/AhnYoungBin/vgg16_tensorflow2.0>
-### VGG16 Pytorch 1.4 code : <https://github.com/AhnYoungBin/vgg16_pytorch>
